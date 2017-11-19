@@ -8,8 +8,8 @@
 # Descargar biblioteca
 
 descargar_biblioteca(){
-	FILENAME="libUtilidades.so"
-	FILEID="1DepNfoZxJTUnW023qfNblPhVX3rUn_7U"
+	FILENAME="libcommons.so"
+	FILEID="1FTaHAgADNriYt9toilZxSTL8pOoKIBdY"
 	curl -L -o ${FILENAME} "https://drive.google.com/uc?export=download&id=${FILEID}"
 }
 
@@ -31,7 +31,7 @@ echo " .--|  .-----.-----|  .-----.--.--.-----.----."
 echo " |  _  |  -__|  _  |  |  _  |  |  |  -__|   _|"
 echo " |_____|_____|   __|__|_____|___  |_____|__|  "
 echo "             |__|           |_____|           "
-echo "             Desplegando utilidades"
+echo "               Desplegando commons"
 echo " "
 
 printf "\e[32mIMPORTANTE!! Correr script en modo <source>\e[0m\n\n"
