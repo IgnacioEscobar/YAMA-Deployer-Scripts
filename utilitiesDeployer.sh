@@ -38,7 +38,7 @@ echo "             Desplegando utilidades"
 echo " "
 
 
-# Opcion: descargar el ejecutable
+# Opcion: descargar la biblioteca
 echo "Desea descargar la biblioteca?"
 select SN in "Si" "No"; do
     case $SN in
@@ -46,6 +46,7 @@ select SN in "Si" "No"; do
         No ) break;;
     esac
 done
+# Opcion: actualizar variable de entorno
 echo "Desea actualizar la variable de entorno?"
 select SN in "Si" "No"; do
     case $SN in
