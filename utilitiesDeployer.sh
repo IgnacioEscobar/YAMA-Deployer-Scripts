@@ -8,12 +8,9 @@
 # Descargar biblioteca
 
 descargar_biblioteca(){
-	echo -n "Complete la direccion: https://transfer.sh/"
-	read DIRECCION
-	printf -v DIRECCION "https://transfer.sh/%s" $DIRECCION
-	echo $DIRECCION
-	curl $DIRECCION > libUtilidades.so
-	printf -v LIBPATH "%s/libUtilidades.so" $PWD
+	FILENAME="libUtilidades.so"
+	FILEID="1DepNfoZxJTUnW023qfNblPhVX3rUn_7U"
+	curl -L -o ${FILENAME} "https://drive.google.com/uc?export=download&id=${FILEID}"
 }
 
 # Agregar al LD_LIBRARY_PATH
