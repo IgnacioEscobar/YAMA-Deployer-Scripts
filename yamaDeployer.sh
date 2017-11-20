@@ -10,22 +10,37 @@ echo " "
 # Descargar biblioteca
 
 descargar_ejecutable(){
-	FILENAME="Master"
+	FILENAME="YAMA"
 	FILEID="1KDB674igKeZqgASz6e-QJZfnPQl5Mhmt"
 	curl -L -o ${FILENAME} "https://drive.google.com/uc?export=download&id=${FILEID}"
 }
 
 # Escribir el archivo de configuracion
 generar_configuracion(){
-	echo "Ingrese la ip del YAMA"
+	echo "Ingrese la ip del FS"
 	echo -n "> "
-	read IPYAMA 
+	read IPFS
+	echo "Ingrese el puerto del FS"
+	echo -n "> "
+	read PUERTOFS
+	echo "Ingrese el retardo de planificacion"
+	echo -n "> "
+	read 
+	echo "Que algoritmo de planificacion desea utilizar?"
+	select CWC in "Clock" "Weighted Clock"; do
+	    case $CWC in
+	        Si ) ALG = "WCLOCK"; break;;
+	        No ) ALG = "CLOCK"; break;;
+	    esac
+	done
 	echo "Ingrese el puerto del YAMA"
 	echo -n "> "
 	read PUERTOYAMA
 	
-	echo "YAMA_IP=$IPYAMA" > master-config.cfg
-	echo "YAMA_PUERTO=$PUERTOYAMA" >> master-config.cfg
+	echo "FS_IP=$IPFS" > yama-config.cfg
+	echo "FS_PUERTO=$PUERTOFS" >> yama-config.cfg
+	echo "ALGORITMO_BALANCEO=$ALG" >> yama-config.cfg
+	echo "YAMA_PUERTO=$PUERTOYAMA" >> yama-config.cfg
 }
 
 #
